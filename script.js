@@ -1,3 +1,27 @@
+document.addEventListener("DOMContentLoaded", function () {
+    const contactForm = document.getElementById("container");
+    const contactList = document.getElementById("list");
+
+    contactForm.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        const name = document.getElementById("name").value;
+        const email = document.getElementById("email").value;
+        const phone = document.getElementById("phone").value;
+
+        const listItem = document.createElement("li");
+        listItem.innerHTML = `
+            <strong>Name:</strong> ${name}<br>
+            <strong>Email:</strong> ${email}<br>
+            <strong>Phone:</strong> ${phone}
+        `;
+
+        contactList.appendChild(listItem)
+        contactForm.reset();
+    });
+});
+
+
 // function contact(name,email,phoneNo){
 //     this.name = name;
 //     this.email = email;
